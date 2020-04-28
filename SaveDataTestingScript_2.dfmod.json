@@ -1,0 +1,14 @@
+{
+    "ModTitle": "SaveDataTestingScript2",
+    "ModVersion": "1.00",
+    "ModAuthor": null,
+    "ContactInfo": null,
+    "DFUnity_Version": "0.10.22",
+    "ModDescription": "Testing More Bullshit 2",
+    "GUID": "90d6d294-d150-4c45-98b4-edd198dc9348",
+    "Files": [
+        "Assets/Game/Mods/SaveDataTestingScript_2.cs"
+    ],
+    "Contributes": null,
+    "Dependencies": null
+}
