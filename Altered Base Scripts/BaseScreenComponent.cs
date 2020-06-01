@@ -87,6 +87,9 @@ namespace DaggerfallWorkshop.Game.UserInterface
 
         float minAutoScale = 0;
         float maxAutoScale = 0;
+		
+		public delegate void OnKeyboardEventHandler(BaseScreenComponent sender, Event keyboardEvent);
+        public event OnKeyboardEventHandler OnKeyboardEvent;
 
         public delegate void OnMouseEnterHandler(BaseScreenComponent sender);
         public event OnMouseEnterHandler OnMouseEnter;
@@ -886,6 +889,20 @@ namespace DaggerfallWorkshop.Game.UserInterface
 
         #region Protected Methods
 
+		/// <summary>
+        /// KeyDown or KeyUp events that matches hotkey sequence
+        /// Returns whether the event could be delivered
+        /// </summary>
+        protected virtual bool KeyboardEvent(Event keyboardEvent)
+        {
+            if (OnKeyboardEvent != null)
+            {
+                OnKeyboardEvent(this, keyboardEvent);
+                return true;
+            }
+            return false;
+        }
+		
         /// <summary>
         /// Mouse clicked inside control area.
         /// </summary>
