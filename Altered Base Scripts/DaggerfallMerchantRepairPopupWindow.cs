@@ -21,10 +21,10 @@ namespace DaggerfallWorkshop.Game.UserInterfaceWindows
     {
         #region UI Rects
 
-        protected Rect repairButtonRect = new Rect(5, 5, 120, 7);
-        protected Rect talkButtonRect = new Rect(5, 14, 120, 7);
-        protected Rect sellButtonRect = new Rect(5, 23, 120, 7);
-        protected Rect exitButtonRect = new Rect(44, 33, 43, 15);
+        Rect repairButtonRect = new Rect(5, 5, 120, 7);
+        Rect talkButtonRect = new Rect(5, 14, 120, 7);
+        Rect sellButtonRect = new Rect(5, 23, 120, 7);
+        Rect exitButtonRect = new Rect(44, 33, 43, 15);
 
         #endregion
 
@@ -40,12 +40,12 @@ namespace DaggerfallWorkshop.Game.UserInterfaceWindows
 
         #region Fields
 
-        protected const string baseTextureName = "REPR01I0.IMG";      // Repair / Talk / Sell
+        const string baseTextureName = "REPR01I0.IMG";      // Repair / Talk / Sell
         protected Texture2D baseTexture;
 
-        protected StaticNPC merchantNPC;
-		
-		bool isCloseWindowDeferred = false;
+        readonly StaticNPC merchantNPC;
+
+        bool isCloseWindowDeferred = false;
         bool isRepairWindowDeferred = false;
         bool isTalkWindowDeferred = false;
         bool isSellWindowDeferred = false;
@@ -82,25 +82,25 @@ namespace DaggerfallWorkshop.Game.UserInterfaceWindows
             repairButton = DaggerfallUI.AddButton(repairButtonRect, mainPanel);
             repairButton.OnMouseClick += RepairButton_OnMouseClick;
             repairButton.Hotkey = DaggerfallShortcut.GetBinding(DaggerfallShortcut.Buttons.MerchantRepair);
-			repairButton.OnKeyboardEvent += RepairButton_OnKeyboardEvent;
+            repairButton.OnKeyboardEvent += RepairButton_OnKeyboardEvent;
 
             // Talk button
             talkButton = DaggerfallUI.AddButton(talkButtonRect, mainPanel);
             talkButton.OnMouseClick += TalkButton_OnMouseClick;
             talkButton.Hotkey = DaggerfallShortcut.GetBinding(DaggerfallShortcut.Buttons.MerchantTalk);
-			talkButton.OnKeyboardEvent += TalkButton_OnKeyboardEvent;
+            talkButton.OnKeyboardEvent += TalkButton_OnKeyboardEvent;
 
             // Sell button
             sellButton = DaggerfallUI.AddButton(sellButtonRect, mainPanel);
             sellButton.OnMouseClick += SellButton_OnMouseClick;
             sellButton.Hotkey = DaggerfallShortcut.GetBinding(DaggerfallShortcut.Buttons.MerchantSell);
-			sellButton.OnKeyboardEvent += SellButton_OnKeyboardEvent;
+            sellButton.OnKeyboardEvent += SellButton_OnKeyboardEvent;
 
             // Exit button
             exitButton = DaggerfallUI.AddButton(exitButtonRect, mainPanel);
             exitButton.OnMouseClick += ExitButton_OnMouseClick;
             exitButton.Hotkey = DaggerfallShortcut.GetBinding(DaggerfallShortcut.Buttons.MerchantExit);
-			exitButton.OnKeyboardEvent += ExitButton_OnKeyboardEvent;
+            exitButton.OnKeyboardEvent += ExitButton_OnKeyboardEvent;
 
             NativePanel.Components.Add(mainPanel);
         }
@@ -124,8 +124,8 @@ namespace DaggerfallWorkshop.Game.UserInterfaceWindows
             CloseWindow();
             uiManager.PushWindow(UIWindowFactory.GetInstanceWithArgs(UIWindowType.Trade, new object[] { uiManager, this, DaggerfallTradeWindow.WindowModes.Repair, null }));
         }
-		
-		protected virtual void RepairButton_OnKeyboardEvent(BaseScreenComponent sender, Event keyboardEvent)
+
+        void RepairButton_OnKeyboardEvent(BaseScreenComponent sender, Event keyboardEvent)
         {
             if (keyboardEvent.type == EventType.KeyDown)
             {
@@ -146,8 +146,8 @@ namespace DaggerfallWorkshop.Game.UserInterfaceWindows
             CloseWindow();
             GameManager.Instance.TalkManager.TalkToStaticNPC(merchantNPC);
         }
-		
-		protected virtual void TalkButton_OnKeyboardEvent(BaseScreenComponent sender, Event keyboardEvent)
+
+        void TalkButton_OnKeyboardEvent(BaseScreenComponent sender, Event keyboardEvent)
         {
             if (keyboardEvent.type == EventType.KeyDown)
             {
@@ -168,8 +168,8 @@ namespace DaggerfallWorkshop.Game.UserInterfaceWindows
             CloseWindow();
             uiManager.PushWindow(UIWindowFactory.GetInstanceWithArgs(UIWindowType.Trade, new object[] { uiManager, this, DaggerfallTradeWindow.WindowModes.Sell, null }));
         }
-		
-		protected virtual void SellButton_OnKeyboardEvent(BaseScreenComponent sender, Event keyboardEvent)
+
+        void SellButton_OnKeyboardEvent(BaseScreenComponent sender, Event keyboardEvent)
         {
             if (keyboardEvent.type == EventType.KeyDown)
             {
@@ -189,8 +189,8 @@ namespace DaggerfallWorkshop.Game.UserInterfaceWindows
             DaggerfallUI.Instance.PlayOneShot(SoundClips.ButtonClick);
             CloseWindow();
         }
-		
-		protected virtual void ExitButton_OnKeyboardEvent(BaseScreenComponent sender, Event keyboardEvent)
+
+        protected void ExitButton_OnKeyboardEvent(BaseScreenComponent sender, Event keyboardEvent)
         {
             if (keyboardEvent.type == EventType.KeyDown)
             {

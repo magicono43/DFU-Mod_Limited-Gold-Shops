@@ -19,9 +19,9 @@ namespace DaggerfallWorkshop.Game.UserInterfaceWindows
     {
         #region UI Rects
 
-        protected Rect talkButtonRect = new Rect(5, 5, 120, 7);
-        protected Rect serviceButtonRect = new Rect(5, 14, 120, 7);
-        protected Rect exitButtonRect = new Rect(44, 24, 43, 15);
+        Rect talkButtonRect = new Rect(5, 5, 120, 7);
+        Rect serviceButtonRect = new Rect(5, 14, 120, 7);
+        Rect exitButtonRect = new Rect(44, 24, 43, 15);
 
         #endregion
 
@@ -37,11 +37,11 @@ namespace DaggerfallWorkshop.Game.UserInterfaceWindows
 
         #region Fields
 
-        protected const string baseTextureName = "GNRC01I0.IMG";      // Talk / Sell
+        const string baseTextureName = "GNRC01I0.IMG";      // Talk / Sell
         protected Texture2D baseTexture;
 
         protected Services currentService;
-        protected StaticNPC merchantNPC;
+        StaticNPC merchantNPC;
 
         #endregion
 
@@ -109,7 +109,7 @@ namespace DaggerfallWorkshop.Game.UserInterfaceWindows
 
         #region Private Methods
 
-        protected virtual string GetServiceLabelText()
+        protected string GetServiceLabelText()
         {
             if (Guilds.Services.HasCustomMerchantService(merchantNPC.Data.factionID))
                 return Guilds.Services.GetCustomMerchantServiceLabel(merchantNPC.Data.factionID);
