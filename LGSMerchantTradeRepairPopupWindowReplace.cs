@@ -21,11 +21,11 @@ namespace DaggerfallWorkshop.Game.UserInterfaceWindows
 
         #region UI Rects
 
-        new Rect repairButtonRect = new Rect(5, 5, 120, 7);
-        new Rect talkButtonRect = new Rect(5, 14, 120, 7);
+        Rect repairButtonRect = new Rect(5, 5, 120, 7);
+        Rect talkButtonRect = new Rect(5, 14, 120, 7);
         Rect investButtonRect = new Rect(5, 23, 120, 7);
-        new Rect sellButtonRect = new Rect(5, 32, 120, 7);
-        new Rect exitButtonRect = new Rect(44, 42, 43, 15);
+        Rect sellButtonRect = new Rect(5, 32, 120, 7);
+        Rect exitButtonRect = new Rect(44, 42, 43, 15);
 
         #endregion
 
@@ -37,7 +37,7 @@ namespace DaggerfallWorkshop.Game.UserInterfaceWindows
 
         #region Fields
 
-        new const string baseTextureName = "LGS_Invest_Popup_Repair_Replacer";      // Repair / Talk / Invest / Sell
+        const string baseTextureName = "LGS_Invest_Popup_Repair_Replacer";      // Repair / Talk / Invest / Sell
 
         #endregion
 
@@ -228,7 +228,6 @@ namespace DaggerfallWorkshop.Game.UserInterfaceWindows
 
         protected void InvestMessageBox_OnGotUserInput(DaggerfallInputMessageBox sender, string input)
         {
-            int mercSkill = player.Skills.GetLiveSkillValue(DFCareer.Skills.Mercantile);
             int playerIntell = player.Stats.LiveIntelligence;
             if (LimitedGoldShops.LimitedGoldShops.ShopBuildingData.TryGetValue(currentBuildingID, out sd))
             {
@@ -313,7 +312,6 @@ namespace DaggerfallWorkshop.Game.UserInterfaceWindows
 
         protected void ScamMessageBox_OnGotUserInput(DaggerfallInputMessageBox sender, string input)
         {
-            int mercSkill = player.Skills.GetLiveSkillValue(DFCareer.Skills.Mercantile);
             int playerIntell = player.Stats.LiveIntelligence;
             if (LimitedGoldShops.LimitedGoldShops.ShopBuildingData.TryGetValue(currentBuildingID, out sd))
             {
@@ -340,7 +338,6 @@ namespace DaggerfallWorkshop.Game.UserInterfaceWindows
 
         protected void ConfirmInvestment_OnButtonClick(DaggerfallMessageBox sender, DaggerfallMessageBox.MessageBoxButtons messageBoxButton)
         {
-            int mercSkill = player.Skills.GetLiveSkillValue(DFCareer.Skills.Mercantile);
             int playerIntell = player.Stats.LiveIntelligence;
             if (LimitedGoldShops.LimitedGoldShops.ShopBuildingData.TryGetValue(currentBuildingID, out sd))
             {
@@ -453,7 +450,6 @@ namespace DaggerfallWorkshop.Game.UserInterfaceWindows
 
         protected void ConfirmGettingScammed_OnButtonClick(DaggerfallMessageBox sender, DaggerfallMessageBox.MessageBoxButtons messageBoxButton)
         {
-            int mercSkill = player.Skills.GetLiveSkillValue(DFCareer.Skills.Mercantile);
             int playerIntell = player.Stats.LiveIntelligence;
             if (LimitedGoldShops.LimitedGoldShops.ShopBuildingData.TryGetValue(currentBuildingID, out sd))
             {

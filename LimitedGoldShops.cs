@@ -249,13 +249,11 @@ namespace LimitedGoldShops
             uint amountInvested = 0;
             int shopAttitude = 0;
             int buildingKey = 0;
-            int mapID = 0;
             int currentGoldSupply = 0;
 
             creationTime = DaggerfallUnity.Instance.WorldTime.DaggerfallDateTime.ToSeconds();
             buildingQuality = GameManager.Instance.PlayerEnterExit.BuildingDiscoveryData.quality;
             buildingKey = GameManager.Instance.PlayerEnterExit.BuildingDiscoveryData.buildingKey;
-            mapID = GameManager.Instance.PlayerGPS.CurrentLocation.MapTableData.MapId;
 
             if (GameManager.Instance.PlayerEnterExit.IsPlayerInsideOpenShop)
             {
