@@ -29,6 +29,8 @@ the shops by investing in them, the return you will get from your investment is 
 SPOILERS/MORE DETAILS:
 -Of the many things that effect how much gold is generated in a store, some other factors include: Player Luck stat, and player Mercantile skill, if the shop was invested in.
 
+-If you load a save that is inside a shop that you have never been in before installing this mod, the shop will have no supply of gold, to fix this simply exit the shop and re-enter again and a gold amount will be generated.
+
 
 OPTIONS:
 
