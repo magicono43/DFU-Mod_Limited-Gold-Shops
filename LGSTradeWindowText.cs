@@ -16,10 +16,16 @@ namespace DaggerfallWorkshop.Game.UserInterfaceWindows
         protected static TextLabel localTextLabelOne;
         protected static TextLabel localTextLabelTwo;
 
-        public LGSTradeWindowText(IUserInterfaceManager uiManager, DaggerfallBaseWindow previous = null, WindowModes windowMode = WindowModes.Sell, IGuild guild = null)
+        public LGSTradeWindowText(IUserInterfaceManager uiManager, DaggerfallBaseWindow previous = null) // Added to attempt to circumvent DFU v0.10.25 issue, working now.
+            : base(uiManager, previous, WindowModes.Sell, null)
+        {
+
+        }
+
+        public LGSTradeWindowText(IUserInterfaceManager uiManager, DaggerfallBaseWindow previous, WindowModes windowMode, IGuild guild = null)
             : base(uiManager, previous, windowMode, guild)
         {
-            
+
         }
 
         protected override void Setup()
