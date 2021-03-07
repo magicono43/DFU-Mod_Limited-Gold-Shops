@@ -232,7 +232,7 @@ namespace DaggerfallWorkshop.Game.UserInterfaceWindows
             }
             CloseWindow();
             if (receivedLetterOfCredit)
-                DaggerfallUI.MessageBox(TextManager.Instance.GetText(textDatabase, "letterOfCredit"));
+                DaggerfallUI.MessageBox(TextManager.Instance.GetLocalizedText("letterOfCredit"));
         }
 
         protected void ConfirmPoorTrade_OnButtonClick(DaggerfallMessageBox sender, DaggerfallMessageBox.MessageBoxButtons messageBoxButton)
@@ -272,7 +272,7 @@ namespace DaggerfallWorkshop.Game.UserInterfaceWindows
             }
             CloseWindow();
             if (receivedLetterOfCredit)
-                DaggerfallUI.MessageBox(TextManager.Instance.GetText(textDatabase, "letterOfCredit"));
+                DaggerfallUI.MessageBox(TextManager.Instance.GetLocalizedText("letterOfCredit"));
         }
 
         public void UpdateShopGoldDisplay()
