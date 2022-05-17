@@ -1,19 +1,19 @@
 {
     "ModTitle": "LimitedGoldShops",
-    "ModVersion": "1.01",
+    "ModVersion": "1.10",
     "ModAuthor": "Kirk.O",
     "ContactInfo": "kirkoliveri@gmail.com",
-    "DFUnity_Version": "0.11.1",
+    "DFUnity_Version": "0.13.5",
     "ModDescription": "Gives All Shops A Limited Supply Of Gold, Restocked Bi-Weekly.",
-    "GUID": "df04bd2f-c676-4abe-9b50-047bdce4f15a",
+    "GUID": "99e63ce8-fdc0-4163-908c-2ed4a7bc52f0",
     "Files": [
-        "Assets/Game/Mods/LimitedGoldShops.cs",
-        "Assets/Game/Mods/LGSMerchantTradeServicePopupWindowReplace.cs",
-        "Assets/Game/Mods/LGSTextTokenHolder.cs",
-        "Assets/Game/Mods/LGSTradeWindowText.cs",
-        "Assets/Game/Mods/LGSMerchantTradeRepairPopupWindowReplace.cs",
-        "Assets/Game/Mods/LGSRegisterTextWindows.cs",
-        "Assets/Game/Mods/LGS_Invest_Popup_Services_Replacer.png",
-        "Assets/Game/Mods/LGS_Invest_Popup_Repair_Replacer.png"
+        "Assets/Game/Mods/DFU-Mod_Limited-Gold-Shops/Textures/LGS_Invest_Popup_Repair_Replacer.png",
+        "Assets/Game/Mods/DFU-Mod_Limited-Gold-Shops/Textures/LGS_Invest_Popup_Services_Replacer.png",
+        "Assets/Game/Mods/DFU-Mod_Limited-Gold-Shops/modsettings.json",
+        "Assets/Game/Mods/DFU-Mod_Limited-Gold-Shops/Scripts/LGSTradeWindowText.cs",
+        "Assets/Game/Mods/DFU-Mod_Limited-Gold-Shops/Scripts/LGSTextTokenHolder.cs",
+        "Assets/Game/Mods/DFU-Mod_Limited-Gold-Shops/Scripts/LGSMerchantTradeServicePopupWindowReplace.cs",
+        "Assets/Game/Mods/DFU-Mod_Limited-Gold-Shops/Scripts/LimitedGoldShopsMain.cs",
+        "Assets/Game/Mods/DFU-Mod_Limited-Gold-Shops/Scripts/LGSMerchantTradeRepairPopupWindowReplace.cs"
     ]
 }
