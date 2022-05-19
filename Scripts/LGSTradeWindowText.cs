@@ -29,30 +29,6 @@ namespace DaggerfallWorkshop.Game.UserInterfaceWindows
 
         }
 
-        List<ItemGroups> itemTypesAccepted = storeBuysItemType[DFLocation.BuildingTypes.GeneralStore];
-
-        static Dictionary<DFLocation.BuildingTypes, List<ItemGroups>> storeBuysItemType = new Dictionary<DFLocation.BuildingTypes, List<ItemGroups>>()
-        {
-            { DFLocation.BuildingTypes.Alchemist, new List<ItemGroups>()
-                { ItemGroups.Gems, ItemGroups.CreatureIngredients1, ItemGroups.CreatureIngredients2, ItemGroups.CreatureIngredients3, ItemGroups.PlantIngredients1, ItemGroups.PlantIngredients2, ItemGroups.MiscellaneousIngredients1, ItemGroups.MiscellaneousIngredients2, ItemGroups.MetalIngredients } },
-            { DFLocation.BuildingTypes.Armorer, new List<ItemGroups>()
-                { ItemGroups.Armor, ItemGroups.Weapons } },
-            { DFLocation.BuildingTypes.Bookseller, new List<ItemGroups>()
-                { ItemGroups.Books } },
-            { DFLocation.BuildingTypes.ClothingStore, new List<ItemGroups>()
-                { ItemGroups.MensClothing, ItemGroups.WomensClothing } },
-            { DFLocation.BuildingTypes.FurnitureStore, new List<ItemGroups>()
-                { ItemGroups.Furniture } },
-            { DFLocation.BuildingTypes.GemStore, new List<ItemGroups>()
-                { ItemGroups.Gems, ItemGroups.Jewellery } },
-            { DFLocation.BuildingTypes.GeneralStore, new List<ItemGroups>()
-                { ItemGroups.Books, ItemGroups.MensClothing, ItemGroups.WomensClothing, ItemGroups.Transportation, ItemGroups.Jewellery, ItemGroups.Weapons, ItemGroups.UselessItems2 } },
-            { DFLocation.BuildingTypes.PawnShop, new List<ItemGroups>()
-                { ItemGroups.Armor, ItemGroups.Books, ItemGroups.MensClothing, ItemGroups.WomensClothing, ItemGroups.Gems, ItemGroups.Jewellery, ItemGroups.ReligiousItems, ItemGroups.Weapons, ItemGroups.UselessItems2, ItemGroups.Paintings } },
-            { DFLocation.BuildingTypes.WeaponSmith, new List<ItemGroups>()
-                { ItemGroups.Armor, ItemGroups.Weapons } },
-        };
-
         protected override void FilterLocalItems()
         {
             localItemsFiltered.Clear();
@@ -77,7 +53,7 @@ namespace DaggerfallWorkshop.Game.UserInterfaceWindows
                     DaggerfallUnityItem item = localItems.GetItem(i);
                     if (!item.IsEquipped && (
                             (WindowMode != WindowModes.Sell && WindowMode != WindowModes.SellMagic) ||
-                            (WindowMode == WindowModes.Sell && itemTypesAccepted.Contains(item.ItemGroup)) ||
+                            (WindowMode == WindowModes.Sell && ItemTypesAccepted.Contains(item.ItemGroup)) ||
                             (WindowMode == WindowModes.SellMagic && item.IsEnchanted)))
                     {
                         if (!LimitedGoldShopsMain.GetShopStandardsSetting())
